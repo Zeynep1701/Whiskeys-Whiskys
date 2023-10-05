@@ -1,27 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import "./App.css";
+import HomePage from "./pages/HomePage"
+import AllWhiskeysPage from "./pages/AllWhiskeysPage"
+import WhiskeyDetailsPage from "./pages/WhiskeyDetailsPage"
+import { Link, NavLink, Route, Routes, useParams } from 'react-router-dom'
+import Navbar from "./components/Navbar";
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-     
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      <Navbar />
+      <h1>Nadia's heaven</h1>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/whiskeys' element={<AllWhiskeysPage />} />
+        <Route path='/whiskeys/:whiskeyId' element={<WhiskeyDetailsPage />} />
+        <Route path='*' element={<h1>404 Page Not Found</h1>} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;
