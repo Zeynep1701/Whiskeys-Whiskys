@@ -3,7 +3,7 @@ import { Link, NavLink, Route, Routes, useParams } from 'react-router-dom'
 function WhiskeyDetailsPage() {
     const [whiskey, setWhiskey] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    const { beerId } = useParams();
+    const { whiskeyId } = useParams();
     const fetchAWhiskey = async () => {
         const response = await fetch(`https://ih-beers-api2.herokuapp.com/beers/${whiskeyId}`)
         console.log(response)
