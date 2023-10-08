@@ -37,9 +37,9 @@ function WhiskeyDetailsPage() {
             <ul>
                 {whiskey && whiskey.notes.map(note =>(
                     <li key={note.id}>
-                        <p>{note.nose}</p>
-                        <p>{note.taste}</p>
-                        <p>{note.finish}</p>
+                        <p>Nose: {note.nose}</p>
+                        <p>Taste: {note.taste}</p>
+                        <p>Finish: {note.finish}</p>
                     </li>
                     
                 ))}

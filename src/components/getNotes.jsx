@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react'
-import { Link, NavLink, Route, Routes, useParams } from 'react-router-dom'
 
 const getNotes = ({whiskeyId, fetchAWhiskey}) => {
-    const [nose, setNose] = useState([])
-    const [taste, setTaste] = useState([])
-    const [finish, setFinish] = useState([])
+    const [userName, setUserName] = useState("")
+    const [nose, setNose] = useState("")
+    const [taste, setTaste] = useState("")
+    const [finish, setFinish] = useState("")
 
     const handleSubmit = async event => {
         event.preventDefault()
-        const payload = { nose, taste, finish, whiskeyId }
+        const payload = { userName, nose, taste, finish, whiskeyId }
     
         try {
-          const response = await fetch(`${import.meta.env.VITE_API_URL}/notes`, {
+          const response = await fetch(`${import.meta.env.VITE_API_URL}/notes/`, {
             method: 'POST',
             body: JSON.stringify(payload),
             headers: {
@@ -23,6 +23,7 @@ const getNotes = ({whiskeyId, fetchAWhiskey}) => {
             const parsed = await response.json()
             console.log(parsed)
             fetchAWhiskey()
+            setUserName("")
             setNose("")
             setTaste("")
             setFinish("")
@@ -34,6 +35,10 @@ const getNotes = ({whiskeyId, fetchAWhiskey}) => {
 
       return (
         <form onSubmit={handleSubmit}>
+           <label>
+            User name: 
+            <input value={userName} onChange={event => setUserName(event.target.value)} />
+          </label>
           <label>
             Nose: 
             <input value={nose} onChange={event => setNose(event.target.value)} />
