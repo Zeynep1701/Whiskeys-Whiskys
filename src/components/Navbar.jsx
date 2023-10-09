@@ -12,7 +12,7 @@ function Navbar() {
             <Link to="/whiskeys/new">
                 <h3>Request a Whiskey</h3> 
             </Link>
-            <Link to="/">
+            <Link to="/whiskeys/cart">
                 <img src={cart} style={{ height: "40px" }} />
             </Link>
         </nav>

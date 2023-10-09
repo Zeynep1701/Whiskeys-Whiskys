@@ -2,6 +2,8 @@ import { Link, NavLink, Route, Routes, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 function HomePage() {
   const [whiskeys, setWhiskeys] = useState([]);
+  const [whiskeyId, setWhiskeyId] = useState();
+
   const fetchAllWhiskeys = async () => {
     const response = await fetch(`${import.meta.env.VITE_API_URL}/whiskeys`);
     if (response.ok) {
@@ -13,6 +15,30 @@ function HomePage() {
   useEffect(() => {
     fetchAllWhiskeys();
   }, []);
+
+  const handleAddToCart = async whiskey => {
+    console.log(whiskey)
+    try {
+        const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/cart/`,
+            {
+                method: 'POST',
+                body: JSON.stringify(whiskey),
+                headers: {
+                    'Content-type': 'application/json',
+                },
+            }
+        )
+       
+        if (response.ok) {
+            const currentWhiskey = await response.json()
+            console.log(currentWhiskey)
+
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
 
   return (
     <>
@@ -40,8 +66,7 @@ function HomePage() {
         }}
       >
         {whiskeys.map((whiskey) => (
-          <li
-            key={whiskey.id}
+          <li key={whiskey.id}
             style={{
               padding: "1rem",
               borderRadius: "12px",
@@ -55,6 +80,7 @@ function HomePage() {
               <p>Age: {whiskey.age}</p>
               <p>Price: {whiskey.price} €</p>
             </Link>
+            <Link><button onClick={()=>{handleAddToCart(whiskey)}}>Add to the cart</button></Link>
           </li>
         ))}
       </ul>

@@ -31,7 +31,7 @@ function WhiskeyDetailsPage() {
             <h2>{whiskey.name}</h2>
             <p>Origin: {whiskey.origin}</p>
             <p>Age: {whiskey.age}</p>
-            <p>Price: {whiskey.price}</p>
+            <p>Price: {whiskey.price} €</p>
             <p>Description: {whiskey.description}</p>
             <h3>Notes:</h3>
             <ul>
