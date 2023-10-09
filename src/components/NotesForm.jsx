@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const getNotes = ({whiskeyId, fetchAWhiskey}) => {
+const notesForm = ({whiskeyId, fetchAWhiskey}) => {
     const [userName, setUserName] = useState("")
     const [nose, setNose] = useState("")
     const [taste, setTaste] = useState("")
@@ -11,7 +11,7 @@ const getNotes = ({whiskeyId, fetchAWhiskey}) => {
         const payload = { userName, nose, taste, finish, whiskeyId }
     
         try {
-          const response = await fetch(`${import.meta.env.VITE_API_URL}/notes/`, {
+          const response = await fetch(`${import.meta.env.VITE_API_URL}/userNotes/`, {
             method: 'POST',
             body: JSON.stringify(payload),
             headers: {
@@ -56,5 +56,5 @@ const getNotes = ({whiskeyId, fetchAWhiskey}) => {
       )
 }
 
-export default getNotes;
+export default notesForm;
 
