@@ -42,7 +42,7 @@ function AddNewWhiskeyPage() {
     }
     return (
         <>
-            <form onSubmit={onSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
+            <form onSubmit={onSubmit} style={{ display: 'grid', gridTemplate: 'auto / 1fr', justifyItems: 'center' }}>
             <label>
                     User's full name:
                     <input type="text" name="userName" onChange={event => setUserName(event.target.value)} value={userName} />

@@ -28,7 +28,7 @@ function WhiskeyDetailsPage() {
     return (
         <>
             <img src={whiskey.image} style={{ height: "200px" }} />
-            <h1>{whiskey.name}</h1>
+            <h2>{whiskey.name}</h2>
             <p>Origin: {whiskey.origin}</p>
             <p>Age: {whiskey.age}</p>
             <p>Price: {whiskey.price}</p>
