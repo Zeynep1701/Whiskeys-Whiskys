@@ -1,14 +1,12 @@
-import { useEffect, useState } from 'react'
-import { Link, NavLink, Route, Routes, useParams } from 'react-router-dom'
+import { useEffect, useState,  } from 'react'
+import { Link, NavLink, Route, Routes, useParams, useNavigate} from 'react-router-dom'
 import NotesForm from '../components/NotesForm.jsx'
+import UpdateWhiskeyNotes from './UpdateWhiskeyNotes.jsx'
+
 function WhiskeyDetailsPage() {
     const [whiskey, setWhiskey] = useState(null)
     const [whiskey2, setWhiskey2] = useState(null)
-    const [userName, setUserName] = useState("")
-    const [nose, setNose] = useState("")
-    const [taste, setTaste] = useState("")
-    const [finish, setFinish] = useState("")
-
+    const navigate = useNavigate()
 
     const { whiskeyId } = useParams();
     const fetchAWhiskey = async () => {
@@ -37,28 +35,6 @@ function WhiskeyDetailsPage() {
         return <p>Loading...</p>
     }
 
-    // const handleUpdate = async (whiskeyId) => {
-    //     const payload = { userName, nose, taste, finish, whiskeyId }
-    //     try {
-    //       const response = await fetch(`${import.meta.env.VITE_API_URL}/userNotes/${whiskeyId}`, {
-    //         method: "PUT",
-    //         body: JSON.stringify(payload),
-    //         headers: {
-    //           "Content-type": "application/json",
-    //         },
-    //       });
-    
-    //       if (response.ok) {
-    //         const currentNote = await response.json();
-    
-    //       }
-    //     } catch (error) {
-    //       console.log(error);
-    //     }
-    //   };
-    //   useEffect(() => {
-        
-    // }, [])
     
     return (
         <>
@@ -83,7 +59,7 @@ function WhiskeyDetailsPage() {
                             <p>Nose: {note.nose}</p>
                             <p>Taste: {note.taste}</p>
                             <p>Finish: {note.finish}</p>
-                            {/* <button onClick={() => {handleUpdate(whiskey2.id)}}>Edit</button> */}
+                            <button onClick={() => {navigate(`/userNotes/${note.id}`)}}>Edit</button>
                         </li>
                         ))}
                     
