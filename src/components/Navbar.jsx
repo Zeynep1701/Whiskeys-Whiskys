@@ -1,6 +1,6 @@
 import "../App.css";
 import homeIcon from "../assets/home-icon.png"
-import cart from "../assets/cart.png"
+import cart from "../assets/Cart.png"
 import AddNewWhiskeyPage from "../pages/AddNewWhiskeyPage"
 import { Link, NavLink, Route, Routes, useParams } from 'react-router-dom'
 function Navbar() {
