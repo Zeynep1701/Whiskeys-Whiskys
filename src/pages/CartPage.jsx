@@ -72,6 +72,7 @@ function CartPage() {
       </ul>
         <div>
             {<h3>Total: {totalPrice} €</h3>}
+            <button type='submit' onClick={()=>{alert(`I'm sure you want more whiskey. Go back and take a closer look to our offers!`)}}>Start payment</button>
         </div>
     </>
   );

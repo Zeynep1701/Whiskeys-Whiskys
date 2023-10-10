@@ -27,3 +27,28 @@ nav {
   margin: 30px 150px;
   text-align: justify;
 }
+
+.notes {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin: 20px;
+}
+
+.notes p{
+  border: 0.2rem solid #bfa437;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.userNotes {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin: 20px;
+}
+.userNotes p{
+  border: 0.2rem solid #bfa437;
+  border-radius: 1rem;
+  padding: 1rem;
+}

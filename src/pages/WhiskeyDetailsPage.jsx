@@ -44,21 +44,21 @@ function WhiskeyDetailsPage() {
             <p>Age: {whiskey.age}</p>
             <p>Price: {whiskey.price} €</p>
             <p>Description: {whiskey.description}</p>
-            <h3>Notes:</h3>
+            <h3>Notes</h3>
             <ul>
                 {whiskey.notes && whiskey.notes.map(note =>(
-                    <li key={note.id}>
-                        <p>Nose: {note.nose}</p>
-                        <p>Taste: {note.taste}</p>
-                        <p>Finish: {note.finish}</p>
+                    <li className='notes' key={note.id}>
+                        <p><strong>Nose:</strong> {note.nose}</p>
+                        <p><strong>Taste:</strong> {note.taste}</p>
+                        <p><strong>Finish:</strong> {note.finish}</p>
                     </li>
                     ))}
                     {whiskey2.userNotes && whiskey2.userNotes.map(note =>(
-                        <li key={note.id}>
-                            <p>User: {note.userName}</p>
-                            <p>Nose: {note.nose}</p>
-                            <p>Taste: {note.taste}</p>
-                            <p>Finish: {note.finish}</p>
+                        <li className='userNotes' key={note.id}>
+                            <p><strong>User:</strong> {note.userName}</p>
+                            <p><strong>Nose:</strong> {note.nose}</p>
+                            <p><strong>Taste:</strong> {note.taste}</p>
+                            <p><strong>Finish:</strong> {note.finish}</p>
                             <button onClick={() => {navigate(`/userNotes/${note.id}`)}}>Edit</button>
                         </li>
                         ))}
