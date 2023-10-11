@@ -34,16 +34,41 @@ function WhiskeyDetailsPage() {
         return <p>Loading...</p>
     }
 
+    const handleAddToCart = async whiskey => {
+        console.log(whiskey)
+        try {
+            const response = await fetch(
+                `${import.meta.env.VITE_API_URL}/cart/`,
+                {
+                    method: 'POST',
+                    body: JSON.stringify(whiskey),
+                    headers: {
+                        'Content-type': 'application/json',
+                    },
+                }
+            )
+           
+            if (response.ok) {
+                const currentWhiskey = await response.json()
+                console.log(currentWhiskey)
+    
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     
     return (
         <>
             <div className='whiskeyDetails'>
             <img src={whiskey.image} style={{ height: "200px" }} />
-            <h2>{whiskey.name}</h2>
-            <h4>Origin: {whiskey.origin}</h4>
-            <h4>Age: {whiskey.age}</h4>
-            <h4 className='price'>Price: {whiskey.price} €</h4>
-            <p id='whiskeyDescription'>Description: {whiskey.description}</p>
+            <h2 className='whiskeyName'>{whiskey.name}</h2>
+            <h4 className='whiskeyOrigin'>Origin: {whiskey.origin}</h4>
+            <h4 className='whiskeyAge'>Age: {whiskey.age}</h4>
+            <h4 className='whiskeyPrice'>Price: {whiskey.price} €</h4>
+            <Link><button onClick={()=>{handleAddToCart(whiskey)}}>Add to the cart</button></Link>
+            <p className='whiskeyDescription'>Description: {whiskey.description}</p>
             </div>
             <h3>Notes</h3>
             <ul>

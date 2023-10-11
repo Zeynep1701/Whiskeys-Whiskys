@@ -74,12 +74,12 @@ nav {
   display: flex;
 } */
 
-#whiskeyDescription {
+.whiskeyDescription {
   margin: 0 15rem;
   text-align: justify;
 }
 
-.price {
+.whiskeyPrice {
   border: 0.2rem solid #BC9B6A;
   border-radius: 1rem;
   padding: 1rem;
