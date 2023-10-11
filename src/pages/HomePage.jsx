@@ -1,4 +1,4 @@
-import { Link, NavLink, Route, Routes, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 function HomePage() {
   const [whiskeys, setWhiskeys] = useState([]);
@@ -84,7 +84,7 @@ function HomePage() {
           </li>
         ))}
       </ul>
-      <div>
+      <div className="requestText">
         <Link to={"/whiskeys/new"}>
           <h3>Couldn't find the whiskey you wanted?</h3>
           <p>

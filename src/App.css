@@ -13,10 +13,6 @@
   padding: 2em;
 }
 
-.read-the-docs {
-  color: #888;
-}
-
 ul{
   list-style: none;
   
@@ -33,6 +29,13 @@ nav {
 .welcomeText {
   margin: 30px 150px;
   text-align: justify;
+}
+
+.requestText {
+  margin: 2rem 20rem;
+  border: 0.2rem solid #003262;
+  border-radius: 1rem;
+  padding: 1rem;
 }
 
 .notes {
@@ -66,13 +69,40 @@ nav {
   margin-top: 10px;
 }
 
+.cartList{
+  padding: "1rem";
+}
+.countButton {
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.deleteButton {
+  margin-top: 0.2rem;
+}
+
+.paymentButton{
+  padding: 1.5rem;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.bottles{
+  font-size: 17px;
+  font-weight: bold;
+  color: #003262;
+}
 .notesForm {
   margin: 1rem;
 }
 
-/* .whiskeyDetails{
-  display: flex;
-} */
+.whiskeyDetails button{
+  margin: 1rem;
+}
+
+.whiskeyName {
+  color: #003262;
+}
 
 .whiskeyDescription {
   margin: 0 15rem;
@@ -83,7 +113,37 @@ nav {
   border: 0.2rem solid #BC9B6A;
   border-radius: 1rem;
   padding: 1rem;
-  margin: 2rem 40rem;
+  margin: 2rem 44rem;
   color: #003262;
+}
+
+.addWhiskeyContainer{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.addWhiskeyContainer table{
+  text-align: center;
+  border-spacing: 25px;
+}
+
+.addWhiskeyForm {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.addWhiskeyButton {
+  margin-top: 1rem;
+}
+
+.updateContainer {
+  width: 100vw;
+}
+
+.updateForm{
+  margin: 3rem 3rem;
+  font-size: 16px;
+  font-weight: bold;
 }
 
