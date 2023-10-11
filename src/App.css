@@ -1,9 +1,14 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
+
+.App {
+  margin: 0;
+  padding: 0;
+}
+
 .card {
   padding: 2em;
 }
@@ -19,8 +24,10 @@ ul{
 
 nav {
   display: flex;
-  justify-content: space-between;
-  color: #FCD9B8;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #BC9B6A;
+  background-color: #003262;
 }
 
 .welcomeText {
@@ -33,10 +40,11 @@ nav {
   gap: 25px;
   justify-content: center;
   margin: 20px;
+  color: #003262;
 }
 
 .notes p{
-  border: 0.2rem solid #bfa437;
+  border: 0.2rem solid #BC9B6A;
   border-radius: 1rem;
   padding: 1rem;
 }
@@ -44,11 +52,37 @@ nav {
 .userNotes {
   display: flex;
   gap: 25px;
-  justify-content: center;
+  justify-content: space-around;
   margin: 20px;
-}
-.userNotes p{
-  border: 0.2rem solid #bfa437;
+  border: 0.2rem solid #BC9B6A;
   border-radius: 1rem;
   padding: 1rem;
+  color: #003262;
 }
+
+.cartPage{
+  width: 100vw;
+  margin: 0;
+}
+
+.notesForm {
+  margin: 1rem;
+}
+
+/* .whiskeyDetails{
+  display: flex;
+} */
+
+#whiskeyDescription {
+  margin: 0 15rem;
+  text-align: justify;
+}
+
+.price {
+  border: 0.2rem solid #BC9B6A;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 2rem 40rem;
+  color: #003262;
+}
+

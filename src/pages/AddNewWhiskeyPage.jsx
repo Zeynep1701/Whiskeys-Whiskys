@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-// import
 function AddNewWhiskeyPage() {
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
@@ -61,7 +60,7 @@ function AddNewWhiskeyPage() {
                     Age of the whiskey: 
                     <input type="text" name="name" onChange={event => setAge(event.target.value)} value={age} />
                 </label>
-                <button type='submit' onClick={()=>{alert('Thanks for your request! We will get back to you as soon as we can')}}>Request your whiskey</button>
+                <button type='submit' onClick={()=>{alert('Thanks for your request! We will get back to you as soon as we want to')}}>Request your whiskey</button>
             </form>
         </>
     )

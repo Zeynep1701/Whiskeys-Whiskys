@@ -1,7 +1,6 @@
 import { useEffect, useState,  } from 'react'
 import { Link, NavLink, Route, Routes, useParams, useNavigate} from 'react-router-dom'
 import NotesForm from '../components/NotesForm.jsx'
-import UpdateWhiskeyNotes from './UpdateWhiskeyNotes.jsx'
 
 function WhiskeyDetailsPage() {
     const [whiskey, setWhiskey] = useState(null)
@@ -38,12 +37,14 @@ function WhiskeyDetailsPage() {
     
     return (
         <>
+            <div className='whiskeyDetails'>
             <img src={whiskey.image} style={{ height: "200px" }} />
             <h2>{whiskey.name}</h2>
-            <p>Origin: {whiskey.origin}</p>
-            <p>Age: {whiskey.age}</p>
-            <p>Price: {whiskey.price} €</p>
-            <p>Description: {whiskey.description}</p>
+            <h4>Origin: {whiskey.origin}</h4>
+            <h4>Age: {whiskey.age}</h4>
+            <h4 className='price'>Price: {whiskey.price} €</h4>
+            <p id='whiskeyDescription'>Description: {whiskey.description}</p>
+            </div>
             <h3>Notes</h3>
             <ul>
                 {whiskey.notes && whiskey.notes.map(note =>(
@@ -53,6 +54,7 @@ function WhiskeyDetailsPage() {
                         <p><strong>Finish:</strong> {note.finish}</p>
                     </li>
                     ))}
+                    <h4>Have you tried this whiskey? Leave us a review of your experience with it</h4>
                     {whiskey2.userNotes && whiskey2.userNotes.map(note =>(
                         <li className='userNotes' key={note.id}>
                             <p><strong>User:</strong> {note.userName}</p>

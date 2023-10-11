@@ -60,7 +60,7 @@ function HomePage() {
         style={{
           listStyle: "none",
           display: "grid",
-          gridTemplate: "auto / repeat(3, 1fr)",
+          gridTemplate: "auto / repeat(4, 1fr)",
           gap: "1rem",
           padding: "0 1rem",
         }}
@@ -70,7 +70,7 @@ function HomePage() {
             style={{
               padding: "1rem",
               borderRadius: "12px",
-              boxShadow: "1px 2px 7px 2px black",
+              boxShadow: "1px 2px 7px 2px #BC9B6A",
             }}
           >
             <Link to={`/whiskeys/${whiskey.id}`}>
