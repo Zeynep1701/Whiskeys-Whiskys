@@ -63,6 +63,7 @@ nav {
 .cartPage{
   width: 100vw;
   margin: 0;
+  margin-top: 10px;
 }
 
 .notesForm {

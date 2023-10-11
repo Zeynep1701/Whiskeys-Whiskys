@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import CountBottles from "../components/countBottles";
+import CountBottles from "../components/CountBottles";
 
 function CartPage() {
   const [addedWhiskey, setAddedWhiskey] = useState();
@@ -95,7 +95,7 @@ function CartPage() {
                   handleDelete(whiskey.id);
                 }}
               >
-                Delete
+                Delete 
               </button>
             </Link>
           </li>
