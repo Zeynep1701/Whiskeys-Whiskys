@@ -7,7 +7,7 @@ function CartPage() {
   const [totalPrice, setTotalPrice] = useState(0);
 
   const [bottles, setBottles] = useState(1);
-  const [whiskeyCounts, setWhiskeyCounts] = useState({});
+  const [whiskeyCounts, setWhiskeyCounts] = useState(null);
 
   const fetchCart = async () => {
     const response = await fetch(`${import.meta.env.VITE_API_URL}/cart`);
@@ -29,10 +29,12 @@ function CartPage() {
   }, [])
 
   useEffect(() => {
+    if (whiskeyCounts) {
     const newTotalPrice = addedWhiskey?.reduce((acc, whiskey) => {
       return acc + whiskey.price * whiskeyCounts[whiskey.id];
     }, 0);
-    setTotalPrice(newTotalPrice);
+    console.log(newTotalPrice)
+    setTotalPrice(newTotalPrice.toFixed(2));}
   }, [addedWhiskey, whiskeyCounts]);
 
   const handleDelete = async (whiskeyId) => {
@@ -49,6 +51,10 @@ function CartPage() {
 
       if (response.ok) {
         const currentWhiskey = await response.json();
+        const filteredWhiskeys = addedWhiskey.filter((oneWhiskey)=>{
+          return oneWhiskey.id !== whiskeyId
+        })
+        setAddedWhiskey(filteredWhiskeys)
       }
     } catch (error) {
       console.log(error);
