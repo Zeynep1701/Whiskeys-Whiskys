@@ -70,16 +70,13 @@ function CartPage() {
         }}
       >
         {addedWhiskey?.map((whiskey) => (
-          <li
+          <li className="cartList"
             key={whiskey.id}
-            style={{
-              padding: "1rem",
-            }}
           >
             <Link to={`/whiskeys/${whiskey.id}`}>
               <img src={whiskey.image} style={{ height: "200px" }} />
               <h3>{whiskey.name}</h3>
-              <p>Price: {whiskey.price} €</p>
+              <h4>Price: {whiskey.price} €</h4>
             </Link>
 
             <div>
@@ -96,7 +93,7 @@ function CartPage() {
             </div>
 
             <Link>
-              <button
+              <button className="deleteButton"
                 onClick={() => {
                   handleDelete(whiskey.id);
                 }}
@@ -109,7 +106,7 @@ function CartPage() {
       </ul>
       <div>
         {<h2>Total: {totalPrice} €</h2>}
-        <button
+        <button className="paymentButton"
           type="submit"
           onClick={() => {
             alert(

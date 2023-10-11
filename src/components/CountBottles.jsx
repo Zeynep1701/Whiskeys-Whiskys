@@ -11,13 +11,11 @@ function CountBottles({whiskeyId, bottles, setBottles}) {
         
     }
 
-    
-
     return (
         <>
-        <button onClick={decrementCount}>-</button>
-        <span>{bottles}</span>
-        <button onClick={incrementCount}>+</button>
+        <button className="countButton" onClick={decrementCount}>-</button>
+        <span className="bottles">{bottles}</span>
+        <button className="countButton" onClick={incrementCount}>+</button>
         </>
     )
 }

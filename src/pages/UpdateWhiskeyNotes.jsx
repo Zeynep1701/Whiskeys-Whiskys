@@ -57,27 +57,28 @@ function UpdateWhiskeyNotes() {
   }, []);
 
   return (
+    <div className='updateContainer'>
     <form onSubmit={handleUpdate}>
-      <label>
-        User name:
+      <label className='updateForm'>
+        User name: 
         <input
           value={userName}
           onChange={(event) => setUserName(event.target.value)}
         />
       </label>
-      <label>
-        Nose:
+      <label className='updateForm'>
+        Nose: 
         <input value={nose} onChange={(event) => setNose(event.target.value)} />
       </label>
-      <label>
-        Taste:
+      <label className='updateForm'>
+        Taste: 
         <input
           value={taste}
           onChange={(event) => setTaste(event.target.value)}
         />
       </label>
-      <label>
-        Finish:
+      <label className='updateForm'>
+        Finish: 
         <input
           value={finish}
           onChange={(event) => setFinish(event.target.value)}
@@ -85,6 +86,7 @@ function UpdateWhiskeyNotes() {
       </label>
       <button type="submit">Edit your notes</button>
     </form>
+    </div>
   );
 }
 
