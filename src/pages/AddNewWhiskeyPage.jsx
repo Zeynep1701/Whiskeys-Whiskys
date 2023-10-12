@@ -40,6 +40,8 @@ function AddNewWhiskeyPage() {
   };
   return (
     <div className="addWhiskeyContainer">
+      <h3>If you couldn't find your favorite whiskey,</h3>
+      <h3>you can request it here and we will contact you as soon as it is available.</h3>
       <form
         onSubmit={onSubmit}
         style={{
